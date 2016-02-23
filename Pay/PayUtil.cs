@@ -16,19 +16,13 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
 using System.Linq;
-using System.Net;
-using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Web;
-using System.Web.Configuration;
 using System.Xml.Linq;
 using Dos.Common;
-using Dos.Common.Helper;
 using Dos.WeChat.Common;
 using Dos.WeChat.Model;
-using Newtonsoft.Json;
 //using ServiceStack.Common.Extensions;
 //using ServiceStack.ServiceModel;
 
@@ -45,6 +39,7 @@ namespace Dos.WeChat
         /// <returns></returns>
         public static BaseResult DownloadBill(string billDate, WeChatParam param)
         {
+           
             var packageReq = new RequestHandler();
             packageReq.SetKey(GetConfig.GetKey(param));
             packageReq.SetParameter("appid", GetConfig.GetAppid(param));
